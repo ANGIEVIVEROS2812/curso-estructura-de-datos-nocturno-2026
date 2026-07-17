@@ -3,7 +3,7 @@
 #include "menu.h"
 #include "destino.h"
 #include "pasajero.h"
-
+#include "viaje.h"
 int main()
 {
     int opcion;
@@ -31,8 +31,10 @@ int main()
                 
 
             case 4:
-                printf("\nRegistrar viaje...\n");
-                break;
+              registrarViaje();
+              break;
+                
+
 
             case 5:
                 printf("\nBuscar viaje...\n");
