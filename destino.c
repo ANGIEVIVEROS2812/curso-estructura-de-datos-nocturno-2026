@@ -56,6 +56,8 @@ void registrarDestino()
     printf("Empresa responsable: ");
     scanf(" %[^\n]", nuevo->empresa);
 
+    nuevo->frente = NULL;
+    nuevo->final = NULL;
     nuevo->siguiente = NULL;
 
     if(listaDestinos == NULL)
