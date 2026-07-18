@@ -18,6 +18,7 @@ extern Viaje *raiz;
 
 void registrarViaje();
 void consultarViaje();
+void realizarEmbarque();
 void mostrarArbol(Viaje *raiz);
 Viaje *buscarViaje(Viaje *raiz, int codigoViaje);
 Viaje *insertarViaje(Viaje *raiz, Viaje *nuevo);

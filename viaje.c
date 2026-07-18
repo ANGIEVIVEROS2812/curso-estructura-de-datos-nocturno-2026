@@ -149,6 +149,59 @@ void mostrarArbol(Viaje *raiz)
 
     mostrarArbol(raiz->derecho);
 }
-    
+  
+void realizarEmbarque()
+{
+    int codigoViaje;
+    Viaje *viaje;
+    Destino *destino;
+    Pasajero *embarca;
+
+    printf("\n========== REALIZAR EMBARQUE ==========\n");
+
+    printf("Codigo del viaje: ");
+    scanf("%d", &codigoViaje);
+
+    viaje = buscarViaje(raiz, codigoViaje);
+
+    if(viaje == NULL)
+    {
+        printf("\nEl viaje no existe.\n");
+        return;
+    }
+
+    destino = buscarDestino(viaje->codigoDestino);
+
+    if(destino == NULL)
+    {
+        printf("\nEl destino del viaje no existe.\n");
+        return;
+    }
+
+    if(destino->frente == NULL)
+    {
+        printf("\nNo hay pasajeros para embarcar.\n");
+        return;
+    }
+
+    embarca = destino->frente;
+
+    printf("\nPasajero embarcado correctamente.\n");
+    printf("Documento : %d\n", embarca->documento);
+    printf("Nombre    : %s\n", embarca->nombre);
+
+    destino->frente = embarca->siguiente;
+
+    if(destino->frente == NULL)
+    {
+        destino->final = NULL;
+    }
+
+    free(embarca);
+
+    viaje->capacidad--;
+
+    printf("Cupos disponibles: %d\n", viaje->capacidad);
+}
 
     

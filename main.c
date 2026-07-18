@@ -50,8 +50,10 @@ int main()
                 
 
             case 7:
-                printf("\nRealizar embarque...\n");
+               realizarEmbarque();
                 break;
+                
+                
 
             case 8:
                 printf("\nConsultar pasajero...\n");
