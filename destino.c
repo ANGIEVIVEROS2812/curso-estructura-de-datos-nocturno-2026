@@ -75,7 +75,18 @@ void registrarDestino()
 
         aux->siguiente = nuevo;
     }
+printf("\nPrueba de la lista:\n");
 
+if(listaDestinos == NULL)
+{
+    printf("La lista sigue vacia.\n");
+}
+else
+{
+    printf("Primer destino: %d - %s\n",
+           listaDestinos->codigo,
+           listaDestinos->nombre);
+}
     printf("\nDestino registrado correctamente.\n");
 }
 

@@ -37,12 +37,17 @@ int main()
 
 
             case 5:
-                printf("\nBuscar viaje...\n");
-                break;
+              consultarViaje();
+              break;
+                
+                
 
             case 6:
-                printf("\nMostrar arbol...\n");
+              printf("\n========== ARBOL DE VIAJES ==========\n");
+               mostrarArbol(raiz);
                 break;
+                
+                
 
             case 7:
                 printf("\nRealizar embarque...\n");

@@ -17,6 +17,8 @@ typedef struct Viaje
 extern Viaje *raiz;
 
 void registrarViaje();
+void consultarViaje();
+void mostrarArbol(Viaje *raiz);
 Viaje *buscarViaje(Viaje *raiz, int codigoViaje);
 Viaje *insertarViaje(Viaje *raiz, Viaje *nuevo);
 #endif

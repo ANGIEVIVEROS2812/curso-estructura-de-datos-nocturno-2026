@@ -51,6 +51,7 @@ Viaje *insertarViaje(Viaje *raiz, Viaje *nuevo)
 /* Registrar un viaje */
 void registrarViaje()
 {
+    printf("\n*** ENTRE A registrarViaje ***\n");
     Viaje *nuevo;
     int codigoDestino;
 
@@ -103,8 +104,51 @@ void registrarViaje()
     printf("\nViaje registrado correctamente.\n");
 }
 
-    
+/* Consultar un viaje */
+void consultarViaje()
+{
+    int codigo;
+    Viaje *viaje;
 
+    printf("\n========== CONSULTAR VIAJE ==========\n");
+
+    printf("Ingrese el codigo del viaje: ");
+    scanf("%d", &codigo);
+
+    viaje = buscarViaje(raiz, codigo);
+
+    if(viaje == NULL)
+    {
+        printf("\nNo existe un viaje con ese codigo.\n");
+        return;
+    }
+
+    printf("\n========== INFORMACION DEL VIAJE ==========\n");
+    printf("Codigo del viaje : %d\n", viaje->codigoViaje);
+    printf("Codigo destino   : %d\n", viaje->codigoDestino);
+    printf("Fecha            : %s\n", viaje->fecha);
+    printf("Hora             : %s\n", viaje->hora);
+    printf("Capacidad        : %d\n", viaje->capacidad);
+}
+
+void mostrarArbol(Viaje *raiz)
+{
+    if(raiz == NULL)
+    {
+        return;
+    }
+
+    mostrarArbol(raiz->izquierdo);
+
+    printf("\n==============================\n");
+    printf("Codigo viaje   : %d\n", raiz->codigoViaje);
+    printf("Codigo destino : %d\n", raiz->codigoDestino);
+    printf("Fecha          : %s\n", raiz->fecha);
+    printf("Hora           : %s\n", raiz->hora);
+    printf("Capacidad      : %d\n", raiz->capacidad);
+
+    mostrarArbol(raiz->derecho);
+}
     
 
     
