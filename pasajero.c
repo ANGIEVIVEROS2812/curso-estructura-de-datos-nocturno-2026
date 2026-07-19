@@ -136,3 +136,36 @@ printf("Direccion final : %p\n", (void *)destino->final);
         aux = aux->siguiente;
     }
 }
+void consultarPasajero()
+{
+    int documento;
+    Destino *destino;
+    Pasajero *pasajero;
+
+    printf("\n========== CONSULTAR PASAJERO ==========\n");
+
+    printf("Documento del pasajero: ");
+    scanf("%d", &documento);
+
+    destino = listaDestinos;
+
+    while(destino != NULL)
+    {
+        pasajero = buscarPasajero(destino->frente, documento);
+
+        if(pasajero != NULL)
+        {
+            printf("\n========== PASAJERO ENCONTRADO ==========\n");
+            printf("Documento : %d\n", pasajero->documento);
+            printf("Nombre    : %s\n", pasajero->nombre);
+            printf("Edad      : %d\n", pasajero->edad);
+            printf("Tipo Doc. : %d\n", pasajero->tipoDocumento);
+            printf("Destino   : %s\n", destino->nombre);
+            return;
+        }
+
+        destino = destino->siguiente;
+    }
+
+    printf("\nNo existe un pasajero con ese documento.\n");
+}

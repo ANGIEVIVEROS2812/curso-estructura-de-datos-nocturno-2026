@@ -15,6 +15,7 @@ typedef struct Pasajero
 
 void registrarPasajero();
 void mostrarPasajerosDestino();
+void consultarPasajero();
 Pasajero *buscarPasajero(Pasajero *frente, int documento);
 
 #endif

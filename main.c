@@ -56,8 +56,10 @@ int main()
                 
 
             case 8:
-                printf("\nConsultar pasajero...\n");
+              consultarPasajero();
                 break;
+                
+                
 
             case 9:
                 mostrarDestinos();
